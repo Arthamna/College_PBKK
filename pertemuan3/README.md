@@ -2,6 +2,10 @@
 
 Calculator App adalah aplikasi kalkulator berbasis Windows Forms yang mendukung operasi dasar, operasi scientific, dan riwayat perhitungan.
 
+## Demo Aplikasi 
+
+![](./imgs/imgs1.png)
+
 ## Pengujian Aplikasi
 
 Pengujian dilakukan menggunakan beberapa skenario operasi dasar.
