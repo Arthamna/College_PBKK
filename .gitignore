@@ -34,5 +34,9 @@ project.lock.json
 Thumbs.db
 
 .codegraph/
+/ai-context/
+**/ai-context/
 
-*.sln
+*.sln  
+**/*.slnx  
+*.vs
