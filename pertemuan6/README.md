@@ -1,4 +1,4 @@
-# Student Registration — Hands-On Lab 2
+# Student Registration
 
 Aplikasi WPF C# dengan ADO.NET dan SQL Server
 
