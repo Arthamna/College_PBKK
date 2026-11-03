@@ -1,69 +1,111 @@
-# CodeIgniter 4 Application Starter
+# Latihan 1 — Inventory Management
 
-## What is CodeIgniter?
+Inventory Management merupakan proyek latihan aplikasi pengelolaan persediaan menggunakan **CodeIgniter 4** dan pola **Model–View–Controller (MVC)**. Dokumentasi ini mencatat kondisi kode yang tersedia, konfigurasi awal, serta tempat untuk menambahkan screenshot hasil aplikasi.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## Daftar isi
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+- [1. Daftar pekerjaan](#1-daftar-pekerjaan)
+- [2. Kode penting dan penjelasannya](#2-kode-penting-dan-penjelasannya)
+- [3. Instalasi dan konfigurasi](#3-instalasi-dan-konfigurasi)
+- [4. Model data](#4-model-data)
+- [5. Hasil tampilan](#5-hasil-tampilan)
+- [6. Referensi](#6-referensi)
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## 1. Daftar pekerjaan
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+| Pekerjaan | Status | Bukti implementasi |
+|---|---|---|
+| Menyiapkan struktur aplikasi CodeIgniter | Tersedia | `composer.json`, `app/`, `public/`, `spark` |
+| Mendefinisikan route halaman awal | Tersedia | `app/Config/Routes.php` |
+| Menampilkan halaman welcome melalui controller dan view | Tersedia di kode | `app/Controllers/Home.php`, `app/Views/welcome_message.php` |
+| Modul bisnis inventory | Belum tersedia | Belum ada controller, model, atau migration bisnis inventory |
+| Screenshot aplikasi | Menunggu gambar | Placeholder pada bagian hasil tampilan |
 
-## Installation & updates
+Belum ada implementasi pengelolaan persediaan pada kode yang diperiksa. Daftar pekerjaan selesai di atas terbatas pada struktur awal aplikasi; belum dilakukan verifikasi visual halaman atau pengujian fitur bisnis inventory.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## 2. Kode penting dan penjelasannya
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+### Routing
 
-## Setup
+File: [`app/Config/Routes.php`](app/Config/Routes.php).
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+```php
+$routes->get('/', 'Home::index');
+```
 
-## Important Change with index.php
+Request `GET /` diteruskan ke method `index()` pada controller `Home`.
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+### Controller dan view
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+File: [`app/Controllers/Home.php`](app/Controllers/Home.php).
 
-**Please** read the user guide for a better explanation of how CI4 works!
+```php
+public function index(): string
+{
+    return view('welcome_message');
+}
+```
 
-## Repository Management
+Controller mengembalikan view [`app/Views/welcome_message.php`](app/Views/welcome_message.php). Alur halaman awal adalah **request → router → controller → view → response HTML**. Halaman ini belum memanggil model karena belum mengakses data bisnis.
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+## 3. Instalasi dan konfigurasi
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+### Kebutuhan
 
-## Server Requirements
+- PHP **8.2 atau lebih baru** sesuai constraint `^8.2` pada `composer.json`.
+- CodeIgniter **4** sesuai constraint `^4.7` pada `composer.json`.
+- Composer serta ekstensi PHP `intl` dan `mbstring`.
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+Jalankan perintah dari folder `latihan1/`:
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+```console
+composer install
+```
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+Salin file `env` menjadi `.env`, lalu sesuaikan:
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+```ini
+CI_ENVIRONMENT = development
+app.baseURL = 'http://localhost:8081/'
+app.indexPage = ''
+```
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+Jalankan server pengembangan:
+
+```console
+php spark serve --port 8081
+```
+
+Buka **http://localhost:8081/**. Untuk PHP XAMPP dengan ekstensi `intl` tersedia tetapi belum aktif, ekstensi dapat dimuat khusus untuk proses server:
+
+```console
+php -d extension=intl -S localhost:8081 -t public vendor/codeigniter4/framework/system/rewrite.php
+```
+
+Document root diarahkan ke `public/`. Halaman welcome belum memerlukan database; instruksi migration dan seeder bisnis akan mengikuti implementasinya jika tersedia.
+
+## 4. Model data
+
+Belum ada model, migration, atau seeder bisnis di `app/Models/` dan `app/Database/`. Karena itu, skema tabel dan ERD Inventory Management belum dapat diturunkan dari kode saat ini.
+
+## 5. Hasil tampilan
+
+> **Placeholder screenshot — Halaman awal Inventory Management.**
+> Jalankan aplikasi dan tambahkan screenshot halaman yang benar-benar tampil. Pada kondisi kode saat ini, halaman awal masih berupa welcome CodeIgniter.
+
+<!-- Setelah gambar tersedia, ganti blok placeholder di atas dengan baris berikut:
+![Halaman awal Inventory Management](../docs/screenshots/latihan1/01-halaman-awal.png)
+-->
+
+*Gambar 1. Halaman awal aplikasi pada proyek Inventory Management.*
+
+Panduan menambahkan gambar: [Screenshot dokumentasi](../docs/screenshots/README.md).
+
+## 6. Referensi
+
+- [Instalasi CodeIgniter 4](https://codeigniter.com/user_guide/installation/index.html)
+- [Routing](https://codeigniter.com/user_guide/incoming/routing.html)
+- [Controllers](https://codeigniter.com/user_guide/incoming/controllers.html)
+- [Views](https://codeigniter.com/user_guide/outgoing/views.html)
+
+[Kembali ke daftar latihan](../README.md)

@@ -124,3 +124,7 @@ _modules/*
 
 /results/
 /phpunit.xml
+
+# Local AI context and development database
+/ai-context/
+/writable/*.sqlite*

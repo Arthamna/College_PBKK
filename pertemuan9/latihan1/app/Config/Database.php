@@ -44,6 +44,8 @@ class Database extends Config
         'port'         => 3306,
         'numberNative' => false,
         'foundRows'    => false,
+        'foreignKeys'  => true,
+        'busyTimeout'  => 5000,
         'dateFormat'   => [
             'date'     => 'Y-m-d',
             'datetime' => 'Y-m-d H:i:s',
@@ -193,6 +195,10 @@ class Database extends Config
     public function __construct()
     {
         parent::__construct();
+
+        if ($this->default['DBDriver'] === 'SQLite3' && ! str_contains($this->default['database'], ':') && ! str_starts_with($this->default['database'], '/')) {
+            $this->default['database'] = WRITEPATH . $this->default['database'];
+        }
 
         // Ensure that we always set the database group to 'tests' if
         // we are currently running an automated test suite, so that
