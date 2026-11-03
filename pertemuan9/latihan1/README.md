@@ -90,12 +90,10 @@ Belum ada model, migration, atau seeder bisnis di `app/Models/` dan `app/Databas
 
 ## 5. Hasil tampilan
 
-> **Placeholder screenshot — Halaman awal Inventory Management.**
-> Jalankan aplikasi dan tambahkan screenshot halaman yang benar-benar tampil. Pada kondisi kode saat ini, halaman awal masih berupa welcome CodeIgniter.
-
-<!-- Setelah gambar tersedia, ganti blok placeholder di atas dengan baris berikut:
-![Halaman awal Inventory Management](../docs/screenshots/latihan1/01-halaman-awal.png)
--->
+![Halaman awal Inventory Management](../docs/screenshots/latihan1/1.png)
+![Halaman awal Inventory Management](../docs/screenshots/latihan1/2.png)
+![Halaman awal Inventory Management](../docs/screenshots/latihan1/3.png)
+![Halaman awal Inventory Management](../docs/screenshots/latihan1/4.png)
 
 *Gambar 1. Halaman awal aplikasi pada proyek Inventory Management.*
 
