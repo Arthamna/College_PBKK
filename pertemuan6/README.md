@@ -1,7 +1,6 @@
 # Student Registration — Hands-On Lab 2
 
-Aplikasi WPF C# dengan ADO.NET dan SQL Server, mengikuti
-`Hands_On_Lab_2_WPF_CSharp_ADONET_SQL_Server-2.pdf`.
+Aplikasi WPF C# dengan ADO.NET dan SQL Server
 
 ## Prasyarat
 
@@ -13,6 +12,9 @@ Aplikasi WPF C# dengan ADO.NET dan SQL Server, mengikuti
 
 Jika instance SQL Server berbeda, sesuaikan `Server` pada `_connectionString`
 di `StudentRegistration/Repositories/StudentRepository.cs`.
+
+Hasil :
+![](./docs/1.png)
 
 ## Menjalankan
 
@@ -42,7 +44,5 @@ Project juga dapat dibuka di Visual Studio dan dijalankan dengan F5.
 Alur: WPF → StudentRepository → ADO.NET → SQL Server → List<Student> → DataGrid.
 Gunakan scrollbar horizontal DataGrid untuk melihat kolom tambahan.
 
-## Referensi
-
-- PDF Hands-On Lab 2 di folder ini (acuan utama, termasuk Lab 19–20).
-- [Microsoft.Data.SqlClient dan ADO.NET](https://learn.microsoft.com/en-us/sql/connect/ado-net/introduction-microsoft-data-sqlclient-namespace)
+Hasil Program 2 :
+![](./docs/2.png)
