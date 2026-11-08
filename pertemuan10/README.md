@@ -15,7 +15,7 @@ Pengunjung dapat menelusuri dan mencari produk, sedangkan customer dapat mengelo
 
 Data aplikasi disimpan di MySQL atau MariaDB menggunakan InnoDB. Antarmuka menggunakan view PHP, Bootstrap 5, dan CSS khusus dengan tampilan marketplace berwarna oranye dan biru gelap.
 
-![Halaman utama ShopEase](../image.png)
+![Halaman utama ShopEase](image.png)
 
 ## 2. Teknologi yang Digunakan
 
