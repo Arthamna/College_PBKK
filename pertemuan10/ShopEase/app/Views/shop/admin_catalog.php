@@ -1,0 +1,4 @@
+<?= $this->extend('shop/layout') ?>
+<?= $this->section('content') ?>
+<h1><?= $kind==='products'?'Produk':'Kategori' ?></h1><a class="btn btn-primary mb-3" href="<?= site_url('admin/'.$kind.'/new') ?>">Tambah</a><div class="table-responsive"><table class="table"><thead><tr><th>Nama</th><th>Slug</th><th>Status</th><th>Aksi</th></tr></thead><tbody><?php foreach ($rows as $row): ?><tr><td><?= esc($row['name']) ?></td><td><?= esc($row['slug']) ?></td><td><?= esc($row['status']??($row['is_active']?'aktif':'nonaktif')) ?></td><td><a href="<?= site_url('admin/'.$kind.'/'.$row['id'].'/edit') ?>">Edit</a><form class="d-inline" method="post" action="<?= site_url('admin/'.$kind.'/'.$row['id'].'/remove') ?>"><?= csrf_field() ?><button class="btn btn-sm btn-outline-danger"><?= $kind==='products'?'Nonaktifkan':'Hapus' ?></button></form></td></tr><?php endforeach ?></tbody></table></div>
+<?= $this->endSection() ?>
