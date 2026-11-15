@@ -1,0 +1,33 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8081:80"
+    environment:
+      APACHE_RUN_USER: "#${HOST_UID:-1000}"
+      APACHE_RUN_GROUP: "#${HOST_GID:-1000}"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: db_shopease
+      MYSQL_USER: shopease
+      MYSQL_PASSWORD: shopease_dev_pw
+      MYSQL_ROOT_PASSWORD: root_dev_pw
+    volumes:
+      - dbdata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot_dev_pw"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  dbdata:
