@@ -1,7 +1,10 @@
 # Student Registration MVVM
 
-Nama: Hartmann Kanisius Galla' Massang  
-NRP: 5025241160
+| Identitas | Keterangan |
+|---|---|
+| Nama | Hartmann Kanisius Galla' Massang |
+| NRP | 5025241160 |
+| Kelas | Pemrograman Berbasis Kerangka Kerja D |
 
 Student Registration MVVM adalah aplikasi desktop untuk mengelola data mahasiswa yang dibuat menggunakan C# dan WPF di Visual Studio. Aplikasi menerapkan pola **Model-View-ViewModel (MVVM)** agar tampilan, logika aplikasi, dan akses database memiliki tanggung jawab yang terpisah.
 

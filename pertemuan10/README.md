@@ -3,6 +3,8 @@
 
 | Identitas | Keterangan |
 |---|---|
+| Nama | Hartmann Kanisius Galla' Massang |
+| NRP | 5025241160 |
 | Kelas | Pemrograman Berbasis Kerangka Kerja D |
 | Materi | CodeIgniter 4 — Routing, Controller, dan View |
 | Proyek | ShopEase |

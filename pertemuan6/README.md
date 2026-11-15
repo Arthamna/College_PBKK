@@ -2,6 +2,12 @@
 
 Aplikasi WPF C# dengan ADO.NET dan SQL Server
 
+| Identitas | Keterangan |
+|---|---|
+| Nama | Hartmann Kanisius Galla' Massang |
+| NRP | 5025241160 |
+| Kelas | Pemrograman Berbasis Kerangka Kerja D |
+
 ## Prasyarat
 
 - Windows dengan .NET SDK 10 dan dukungan WPF.

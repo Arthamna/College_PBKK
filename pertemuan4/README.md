@@ -2,6 +2,13 @@
 
 Aplikasi desktop **Student Registration App** dibuat menggunakan Windows Presentation Foundation (WPF). Aplikasi ini menerapkan fitur CRUD secara in-memory untuk mengelola data mahasiswa, meliputi **Simpan, Edit, Hapus, Cari, dan Reset**.
 
+| Identitas | Keterangan |
+|---|---|
+| Nama | Hartmann Kanisius Galla' Massang |
+| NRP | 5025241160 |
+| Kelas | Pemrograman Berbasis Kerangka Kerja D |
+
+
 ## Test Case
 
 ### 1. NIM kosong

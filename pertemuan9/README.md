@@ -2,6 +2,12 @@
 
 Dokumentasi pekerjaan aplikasi berbasis CodeIgniter 4 dengan pola **Model–View–Controller (MVC)**.
 
+| Identitas | Keterangan |
+|---|---|
+| Nama | Hartmann Kanisius Galla' Massang |
+| NRP | 5025241160 |
+| Kelas | Pemrograman Berbasis Kerangka Kerja D |
+
 ## Daftar latihan
 
 | Latihan | Sistem | Folder aplikasi | Dokumentasi |

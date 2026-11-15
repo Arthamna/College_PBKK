@@ -2,6 +2,12 @@
 
 Calculator App adalah aplikasi kalkulator berbasis Windows Forms yang mendukung operasi dasar, operasi scientific, dan riwayat perhitungan.
 
+| Identitas | Keterangan |
+|---|---|
+| Nama | Hartmann Kanisius Galla' Massang |
+| NRP | 5025241160 |
+| Kelas | Pemrograman Berbasis Kerangka Kerja D |
+
 ## Demo Aplikasi 
 
 ![](./imgs/imgs1.png)
